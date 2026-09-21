@@ -5,14 +5,14 @@ Este arquivo e gerado automaticamente pela pipeline.
 
 ## Alunos
 
-- Aluno1
-- Aluno2
+- Hercilio Zanca neto
+- Jorge Armando Bittencourt
 
 ## Resultado do Docker Build
 
 | Item | Valor |
 |---|---|
 | Status | ⚪ Pulado (algum gate de seguranca falhou) |
-| Commit | `21dc3b3dce22770de1abfb33fe6dd527f212b72a` |
-| Execucao | [35548451103](https://github.com/sbaron81/unifebe-si08-devsecops/actions/runs/35548451103) |
-| Data | 21/09/2026 00:40 UTC |
+| Commit | `0ddd89dc3fe647acdfd8dda7c21ffda882a51466` |
+| Execucao | [35662338873](https://github.com/jorge-armando/unifebe-si08-pp1/actions/runs/35662338873) |
+| Data | 21/09/2026 22:22 UTC |
