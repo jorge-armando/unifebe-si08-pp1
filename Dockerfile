@@ -1,13 +1,12 @@
-FROM openjdk:latest
-#FROM eclipse-temurin:17-jre
-
+FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
+RUN addgroup -S app && adduser -S app -G app
+
 COPY target/banco-facil-api-0.0.1-SNAPSHOT.jar app.jar
 
-USER root
-#USER 1000
+USER app
 
 EXPOSE 8080
 
