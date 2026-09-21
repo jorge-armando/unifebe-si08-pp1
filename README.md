@@ -14,8 +14,8 @@ Este arquivo e gerado automaticamente pela pipeline.
 |---|---|
 | Status | 🟢 Sucesso |
 | Imagem | `ghcr.io/jorge-armando/unifebe-si08-pp1` |
-| Tags | `latest`, `f34313b3cfc6b8282266b2e633a0d5d1c1e880f3` |
-| Digest | `sha256:7114870e63ace12ff02dc3d63959c9834e056b2aaab27d8e0932c63c0dc8f563` |
-| Commit | `f34313b3cfc6b8282266b2e633a0d5d1c1e880f3` |
-| Execucao | [35664600071](https://github.com/jorge-armando/unifebe-si08-pp1/actions/runs/35664600071) |
-| Data | 21/09/2026 22:51 UTC |
+| Tags | `latest`, `d6870daf52dc83511e6a94c7cf2d643213dedd88` |
+| Digest | `sha256:5445e1cb7509da8410e935285b0a4616ca503fa9d046ae30914c1e82c0e6c394` |
+| Commit | `d6870daf52dc83511e6a94c7cf2d643213dedd88` |
+| Execucao | [35665047832](https://github.com/jorge-armando/unifebe-si08-pp1/actions/runs/35665047832) |
+| Data | 21/09/2026 22:56 UTC |
