@@ -1,20 +1,41 @@
 package com.unifebe.devsecops.config;
 
 /**
- * ATENCAO - CODIGO PROPOSITALMENTE INSEGURO PARA FINS DIDATICOS.
- * Nunca faca isto em um projeto real: credenciais NUNCA devem ser
- * gravadas diretamente no codigo-fonte (Secret Sprawl).
+ * Credenciais lidas de variaveis de ambiente, nunca gravadas no codigo-fonte.
+ *
+ * Em producao essas variaveis sao populadas por um cofre de segredos (HashiCorp
+ * Vault, AWS Secrets Manager, Azure Key Vault) e injetadas no container pelo
+ * orquestrador, o que permite rotacao e revogacao sem novo deploy. O
+ * GITHUB_TOKEN do Actions nao serve para isto: e um segredo de CI/build, nao de
+ * runtime.
  */
-public class AppConfig {
+public final class AppConfig {
 
-    // Exemplo de credencial de banco de dados exposta no repositorio
-    public static final String DB_PASSWORD = "SuperSecretP@ssw0rd123";
+    private AppConfig() {
+    }
 
-    // Exemplo classico de chave AWS (formato oficial de exemplo da AWS)
-    public static final String AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE";
-    public static final String AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY";
+    public static String dbPassword() {
+        return required("DB_PASSWORD");
+    }
 
-    // Exemplo de chave de API de um provedor de pagamentos
-    public static final String PAYMENT_GATEWAY_API_KEY = "sk_live_51H8xJ2EXAMPLEKEYDONOTUSEINPRODUCTION0001";
+    public static String awsAccessKeyId() {
+        return required("AWS_ACCESS_KEY_ID");
+    }
 
+    public static String awsSecretAccessKey() {
+        return required("AWS_SECRET_ACCESS_KEY");
+    }
+
+    public static String paymentGatewayApiKey() {
+        return required("PAYMENT_GATEWAY_API_KEY");
+    }
+
+    private static String required(String name) {
+        String value = System.getenv(name);
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException(
+                    "Variavel de ambiente obrigatoria nao definida: " + name);
+        }
+        return value;
+    }
 }
